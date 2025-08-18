@@ -43,6 +43,7 @@ ssh_pwauth: true\n\
 chpasswd:\n\
   list: |\n\
     root:root\n\
+    tasin:root@tasin\n\
   expire: false\n\
 runcmd:\n\
   - systemctl enable ssh\n\
