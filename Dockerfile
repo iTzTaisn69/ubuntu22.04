@@ -79,7 +79,7 @@ fi
 qemu-system-x86_64 \
     -enable-kvm \
     -cpu host \
-    -smp 3 \
+    -smp 6 \
     -m 32000 \
     -drive file="$DISK",format=raw,if=virtio \
     -drive file="$SEED",format=raw,if=virtio \
