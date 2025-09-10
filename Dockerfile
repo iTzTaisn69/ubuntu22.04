@@ -25,7 +25,7 @@ RUN curl -L https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-
     -o /opt/qemu/ubuntu.img
 
 # Write meta-data
-RUN echo "instance-id: ubuntu-vm\nlocal-hostname: hpccloud" > /cloud-init/meta-data
+RUN echo "instance-id: hpccloud\nlocal-hostname: hpccloud" > /cloud-init/meta-data
 
 # Write user-data with working root login and password 'root'
 RUN printf "#cloud-config\n\
