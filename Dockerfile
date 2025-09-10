@@ -25,12 +25,12 @@ RUN curl -L https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-
     -o /opt/qemu/ubuntu.img
 
 # Write meta-data
-RUN echo "instance-id: hpccloud\nlocal-hostname: hpccloud" > /cloud-init/meta-data
+RUN echo "instance-id: dragoncloud\nlocal-hostname: dragoncloud" > /cloud-init/meta-data
 
 # Write user-data with working root login and password 'root'
 RUN printf "#cloud-config\n\
 preserve_hostname: false\n\
-hostname: hpccloud\n\
+hostname: dragoncloud\n\
 users:\n\
   - name: root\n\
     gecos: root\n\
