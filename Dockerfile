@@ -80,7 +80,7 @@ qemu-system-x86_64 \
     -enable-kvm \
     -cpu host \
     -smp 6 \
-    -m 3129 \
+    -m 29129 \
     -drive file="$DISK",format=raw,if=virtio \
     -drive file="$SEED",format=raw,if=virtio \
     -netdev user,id=net0,hostfwd=tcp::2222-:22 \
