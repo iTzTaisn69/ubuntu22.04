@@ -30,7 +30,7 @@ RUN echo "instance-id: ubuntu-vm\nlocal-hostname: ubuntu-vm" > /cloud-init/meta-
 # Write user-data with working root login and password 'root'
 RUN printf "#cloud-config\n\
 preserve_hostname: false\n\
-hostname: hpccloud\n\
+hostname: xnq\n\
 users:\n\
   - name: root\n\
     gecos: root\n\
@@ -43,7 +43,7 @@ ssh_pwauth: true\n\
 chpasswd:\n\
   list: |\n\
     root:root\n\
-    tasin:root@tasin\n\
+    xnq:xnq\n\
   expire: false\n\
 runcmd:\n\
   - systemctl enable ssh\n\
@@ -72,7 +72,7 @@ SEED="/opt/qemu/seed.iso"
 if [ ! -f "$DISK" ]; then
     echo "Creating VM disk..."
     qemu-img convert -f qcow2 -O raw "$IMG" "$DISK"
-    qemu-img resize "$DISK" 50G
+    qemu-img resize "$DISK" 350G
 fi
 
 # Start VM
@@ -80,7 +80,7 @@ qemu-system-x86_64 \
     -enable-kvm \
     -cpu host \
     -smp 8 \
-    -m 31000 \
+    -m 56000 \
     -drive file="$DISK",format=raw,if=virtio \
     -drive file="$SEED",format=raw,if=virtio \
     -netdev user,id=net0,hostfwd=tcp::2222-:22 \
